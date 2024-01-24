@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GunTemplate" load_steps=3 format=3 uid="uid://bwlcqje4brv4f"]
+
+[ext_resource type="Texture2D" uid="uid://76upl0f2mmh" path="res://Guns/ak47png.tres" id="1_ej6e6"]
+[ext_resource type="Script" path="res://Guns/GunTemplates/gun_template.gd" id="1_vplsg"]
+
+[resource]
+script = ExtResource("1_vplsg")
+gun_name = "Ak-47"
+bullet_capacity = 30
+ACTUAL_BULLET = 30
+bullet_total = 90
+bullet_speed = 3000
+bullet_cooldown = 0.1
+bullet_reload = 1.5
+gun_type = 0
+gun_texture = ExtResource("1_ej6e6")

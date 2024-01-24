@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://ft61iu7lvol4"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_intab"]
+[ext_resource type="PackedScene" uid="uid://c1nqg4yjf3634" path="res://gun_node.tscn" id="2_8g2lg"]
+[ext_resource type="Resource" uid="uid://bwlcqje4brv4f" path="res://States/Gun/AK47.tres" id="3_c5867"]
+[ext_resource type="Resource" uid="uid://d35p5n1pyavnf" path="res://States/Gun/REVOLVER.tres" id="3_jxqb4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gef7k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_38fh8"]
+
+[node name="CHARACTER" type="CharacterBody2D" node_paths=PackedStringArray("INITIAL_GUN")]
+scale = Vector2(2, 2)
+script = ExtResource("1_intab")
+INITIAL_GUN = NodePath("GunSlots/Slot2/Revolver")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(1.78814e-07, 3.09944e-06)
+scale = Vector2(20.0227, 20)
+mesh = SubResource("SphereMesh_gef7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_38fh8")
+
+[node name="GunSlots" type="Node2D" parent="."]
+
+[node name="Slot1" type="Node2D" parent="GunSlots"]
+
+[node name="Ak47" parent="GunSlots/Slot1" instance=ExtResource("2_8g2lg")]
+visible = false
+gun_data = ExtResource("3_c5867")
+
+[node name="Slot2" type="Node2D" parent="GunSlots"]
+
+[node name="Revolver" parent="GunSlots/Slot2" instance=ExtResource("2_8g2lg")]
+visible = false
+gun_data = ExtResource("3_jxqb4")
+
+[node name="Slot3" type="Node2D" parent="GunSlots"]

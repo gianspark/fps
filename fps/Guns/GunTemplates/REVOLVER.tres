@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GunTemplate" load_steps=3 format=3 uid="uid://d35p5n1pyavnf"]
+
+[ext_resource type="Texture2D" uid="uid://bbes8t1yg11b6" path="res://Guns/revolverpng.tres" id="1_0t7ts"]
+[ext_resource type="Script" path="res://Guns/GunTemplates/gun_template.gd" id="1_yvte5"]
+
+[resource]
+script = ExtResource("1_yvte5")
+gun_name = "Revolver"
+bullet_capacity = 6
+ACTUAL_BULLET = 6
+bullet_total = 18
+bullet_speed = 2000
+bullet_cooldown = 0.3
+bullet_reload = 1.0
+gun_type = 1
+gun_texture = ExtResource("1_0t7ts")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1a3u1agpf2xs"]
+
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_3bigo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hmjh3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b8eoe"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qtw8a"]
+radius = 11.0
+
+[node name="Bullet" type="CharacterBody2D"]
+script = ExtResource("1_3bigo")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(1, 1, 0.392157, 1)
+scale = Vector2(11.5125, 11.5)
+mesh = SubResource("SphereMesh_hmjh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b8eoe")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qtw8a")
